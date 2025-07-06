@@ -25,11 +25,11 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-      # - name: Build and Push Docker Image
-      #   uses: docker/build-push-action@v4
-      #   with:
-      #     context: .
-      #     push: true
-      #     tags: nanajanashia/demo-app:latest
-      #     username: ${{ secrets.DOCKER_USERNAME }}
-      #     password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: nanajanashia/demo-app:latest
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
